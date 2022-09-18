@@ -1,0 +1,14 @@
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    image: nestgrpcboiler
+    environment:
+      - NODE_ENV=dev
+    ports:
+      - "5000:5000"
+    container_name: nestgrpcboiler-container
+    volumes:
+      - ./:/app
+      - /app/node_modules
